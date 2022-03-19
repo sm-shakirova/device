@@ -1,2 +1,2 @@
 # Device
-## React + Effector project
+React + Effector project
