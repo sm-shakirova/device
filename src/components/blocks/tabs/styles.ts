@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-interface IContent {
+interface IContentProps {
   background?: string;
 };
 
@@ -20,7 +20,7 @@ export const Nav = styled.ul`
   padding: 0;
 `;
 
-export const Content = styled.div<IContent>`
+export const Content = styled.div<IContentProps>`
   min-height: 380px;
   margin-right: 60px;
   padding-right: 240px;

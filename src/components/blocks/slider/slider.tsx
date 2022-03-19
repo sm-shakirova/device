@@ -6,6 +6,7 @@ import {
   StyledSlider,
   Slides,
   Slide,
+  Number,
   Wrapper,
   LeftArrow,
   RightArrow,
@@ -29,6 +30,7 @@ const Slider: React.FC = () => {
       <h2 className='visually-hidden'>Примеры товаров</h2>
       <Slides>
         <Slide>
+          <Number>{slide.id.toString().length === 1 ? `0${slide.id}` : slide.id}</Number>
           <Wrapper>
             <LeftArrow
               type='button'
@@ -49,7 +51,7 @@ const Slider: React.FC = () => {
             </RightArrow>
           </Wrapper>
           <TextContent>
-            <Title as='h3' size='L'>{slide.title}</Title>
+            <Title as='h3' size='L' marginTop={130} marginBottom={30}>{slide.title}</Title>
             <p>{slide.text}</p>
             <BulletList>
               {slides.map((_, index) => (

@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 800;
     font-style: normal;
     font-display: swap;
-    src: url('../fonts/raleway-800.woff2') format('woff2');
+    src: local('Raleway'), url('../fonts/raleway-800.woff2') format('woff2');
   }
 
   @font-face {
@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    src: url('../fonts/rubik-400.woff2') format('woff2');
+    src: local('Rubik'), url('../fonts/rubik-400.woff2') format('woff2');
   }
 
   @font-face {
@@ -22,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 700;
     font-style: normal;
     font-display: swap;
-    src: url('../fonts/rubik-700.woff2') format('woff2');
+    src: local('Rubik'), url('../fonts/rubik-700.woff2') format('woff2');
   }
 
   @font-face {
@@ -30,7 +30,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 800;
     font-style: normal;
     font-display: swap;
-    src: url('../fonts/rubik-800.woff2') format('woff2');
+    src: local('Rubik'), url('../fonts/rubik-800.woff2') format('woff2');
   }
   
   *,

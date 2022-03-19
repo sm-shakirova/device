@@ -16,6 +16,20 @@ export const Slide = styled.li`
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: ${(props) => props.theme.layoutGap};
+  position: relative;
+`;
+
+export const Number = styled.span`
+  position: absolute;
+  top: 0;
+  right: 50px;
+  font-family: ${(props) => props.theme.fontMain};
+  font-weight: 800;
+  font-size: 180px;
+  line-height: 200px;
+  margin: 0;
+  color: ${(props) => props.theme.colors.basicWhite};
+  z-index: 3;
 `;
 
 export const Wrapper = styled.div`
@@ -51,12 +65,13 @@ export const LeftArrow = styled(RightArrow)`
 
 export const TextContent = styled.div`
   position: relative;
+  z-index: 5;
 `;
 
 export const BulletList = styled.ol`
   list-style: none;
-  padding: none;
-  margin: none;
+  padding: 0;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(3, min-content);
   position: absolute;

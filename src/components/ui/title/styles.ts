@@ -22,4 +22,6 @@ export const StyledTitle = styled.h1<ITitleProps>`
   letter-spacing: ${(props) => props.size === 'S' ? props.theme.letterSpacing : 'auto'};
   text-transform: ${(props) => props.size === 'S' ? 'uppercase' : 'none'};
   color: inherit;
+  margin-top: ${(props) => props.marginTop ? `${props.marginTop}px` : 'auto'};
+  margin-bottom: ${(props) => props.marginBottom ? `${props.marginBottom}px` : 'auto'};
 `;

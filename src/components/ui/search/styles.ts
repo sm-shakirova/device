@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-interface ISearch {
+export interface ISearch {
   width?: string;
 };
 
@@ -8,6 +8,9 @@ export const StyledSearch = styled.form<ISearch>`
   display: flex;
   width: ${(props) => props.width ? props.width : 'min-content'};
   position: relative;
+  background-image: url(${'images/search.svg'});
+  background-repeat: no-repeat;
+  background-position: left 20px center;
 `;
 
 export const Button = styled.button`
