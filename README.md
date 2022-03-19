@@ -1,2 +1,4 @@
 # Device
-React + Effector project
+React + Effector web page
+
+HTML Academy design

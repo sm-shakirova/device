@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useStore } from 'effector-react';
 import { $tabs, $currentTab, changeTab }  from '../../../model/tabs';
-import { StyledTabs, Nav } from './styles';
+import { StyledTabs, Wrapper, Nav, Button } from './styles';
 import Tab from './tab';
 
 const Tabs: React.FC = () => {
@@ -11,15 +11,17 @@ const Tabs: React.FC = () => {
   return (
     <StyledTabs id='tabs'>
       <h2 className='visually-hidden'>Сервисы</h2>
-      <Nav>
-        {tabs.map((tab) => (
-          <li key={tab.id}>
-            <button type='button' onClick={() => changeTab(tab.id)}>
-              {tab.title}
-            </button>
-          </li>
-        ))}
-      </Nav>
+      <Wrapper>
+        <Nav>
+          {tabs.map((tab) => (
+            <li key={tab.id}>
+              <Button type='button' onClick={() => changeTab(tab.id)} isActive={tab.id === currentTab}>
+                {tab.title}
+              </Button>
+            </li>
+          ))}
+        </Nav>
+      </Wrapper>
       <Tab tab={tabs.find((tab) => tab.id === currentTab)}/>
     </StyledTabs>
   )

@@ -15,7 +15,7 @@ const Header: React.FC = () => {
       <Wrapper>
         <h1 className='visually-hidden'>Интернет-магазин "Девайс"</h1>
         <StyledLogo />
-        <StyledSearch width='70%' placeholder='Поиск по сайту'/>
+        <StyledSearch width='500px' placeholder='Поиск по сайту'/>
         <StyledNav width='100%' asymmetric />
         <CatalogMenu>
           <Link to='/catalog'>Каталог товаров</Link>

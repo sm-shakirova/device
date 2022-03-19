@@ -1,11 +1,14 @@
 import React from 'react';
 import { Slider, Tabs } from '../../blocks';
+import { Wrapper } from './styles';
 
 const MainPage: React.FC = () => {
   return (
     <main>
-      <Slider />
-      <Tabs />
+      <Wrapper>
+        <Slider />
+        <Tabs />
+      </Wrapper>
     </main>
   )
 };

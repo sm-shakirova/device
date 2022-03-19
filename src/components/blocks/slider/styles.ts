@@ -9,7 +9,7 @@ export const Slides = styled.ul`
   background: linear-gradient(to bottom, ${(props) => props.theme.colors.themeMain} 154px, transparent 0);
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: -30px 0 0;
 `;
 
 export const Slide = styled.li`
@@ -29,7 +29,6 @@ export const Number = styled.span`
   line-height: 200px;
   margin: 0;
   color: ${(props) => props.theme.colors.basicWhite};
-  z-index: 3;
 `;
 
 export const Wrapper = styled.div`
@@ -43,7 +42,7 @@ export const RightArrow = styled.button`
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 20px;
+  right: 0;
   margin: auto;
   background: url('images/arrows/tall-arrow.svg') no-repeat center;
   width: 40px;
@@ -60,12 +59,15 @@ export const RightArrow = styled.button`
 export const LeftArrow = styled(RightArrow)`
   transform: rotate(180deg);
   right: unset;
-  left: 20px;
+  left: 0;
 `;
 
 export const TextContent = styled.div`
   position: relative;
-  z-index: 5;
+  
+  p {
+    color: ${(props) => props.theme.colors.basicDark};
+  }
 `;
 
 export const BulletList = styled.ol`
