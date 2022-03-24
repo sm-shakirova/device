@@ -1,24 +1,22 @@
-import React, { useState } from 'react';
-import { Wrapper, Overlay, StyledPopup, CloseButton } from './styles';
+import React from 'react';
+import { StyledPopup } from './styles';
 
 export interface IPopup {
-  isOpen: boolean;
-  setOpen: any;
   children: React.ReactNode;
+  isOpen?: boolean;
+  setOpen?: (params: any) => any;
+  className?: string;
 }
 
 const Popup: React.FC<IPopup> =
-  ({ isOpen,
+  ({ children,
+     isOpen,
      setOpen,
-     children }) => {
+     className }) => {
   return (
-    <Wrapper isOpen={isOpen}>
-      <Overlay onClick={() => setOpen(false)} />
-      <StyledPopup>
-        <CloseButton onClick={() => setOpen(false)}/>
-        {children}
-      </StyledPopup>
-    </Wrapper>
+    <StyledPopup isOpen={isOpen} setOpen={setOpen} className={className}>
+      {children}
+    </StyledPopup>
   )
 }
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Popup } from '../../layout';
+import { Modal } from '../../layout';
 import { Title, Input, Button, Alert } from '../../ui';
 import { useStore } from "effector-react";
 import { $users, loadUsers, findUser } from '../../../model/users';
@@ -21,7 +21,7 @@ const LoginForm: React.FC<ILoginForm> = ({ isOpen, setOpen, alert, setAlert }) =
   const [register, setRegister] = useState(false);
 
   return (
-    <Popup isOpen={isOpen} setOpen={setOpen}>
+    <Modal isOpen={isOpen} setOpen={setOpen}>
       <Title as='h2' size='L' marginBottom={60}>
         {register ? 'Регистрация' : 'Вход'}
       </Title>
@@ -113,7 +113,7 @@ const LoginForm: React.FC<ILoginForm> = ({ isOpen, setOpen, alert, setAlert }) =
           </Button>
         ) : null}
       </form>
-    </Popup>
+    </Modal>
   )
 }
 

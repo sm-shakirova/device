@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Cart } from '../../blocks';
 
 interface IListProps {
   width?: string;
@@ -20,6 +21,7 @@ export const List = styled.ul<IListProps>`
   justify-content: space-between;
   align-items: center;
   width: ${(props) => props.width ? props.width : 'auto'};
+  position: relative;
 `;
 
 export const Button = styled.button<IButtonProps>`
@@ -68,7 +70,15 @@ export const Logout = styled(Button)`
   }
 `;
 
-export const Cart = styled(Button)`
+export const StyledCart = styled(Cart)`
+  display: none;
+  
+  &:hover {
+    display: block;
+  }
+`;
+
+export const CartTitle = styled(Button)`
   &:before {
     content: '';
     width: 16px;
@@ -81,4 +91,20 @@ export const Cart = styled(Button)`
     background-image: url('images/cart.svg');
     background-repeat: no-repeat;
   }
+  
+  &:hover + ${StyledCart} {
+    display: block;
+  }
+`;
+
+export const ProductsNumber = styled.span`
+  border-radius: 50%;
+  background-color: ${(props) => props.theme.colors.basicWhite};
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  left: 5px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 19px;
 `;

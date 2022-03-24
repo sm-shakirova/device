@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { IBulletProps } from './slider';
+import Button from '../../ui/button/button';
 
 export const StyledSlider = styled.section`
   padding: 0 ${(props) => props.theme.pagePadding};
@@ -99,4 +100,7 @@ export const Bullet = styled.button<IBulletProps>`
   cursor: pointer;
 `;
 
-
+export const StyledButton = styled(Button)`
+  position: absolute;
+  bottom: 160px;
+`;

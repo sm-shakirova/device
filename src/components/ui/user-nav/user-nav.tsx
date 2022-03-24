@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { LoginForm } from '../../blocks';
-import { List, Login, Cart, Logout } from './styles';
+import { List, Login, CartTitle, StyledCart, Logout, ProductsNumber } from './styles';
 import { $users, logOut } from "../../../model/users";
+import { $cart } from '../../../model/cart';
 import { useStore } from "effector-react";
 
 export interface IUserNavProps {
@@ -10,9 +11,10 @@ export interface IUserNavProps {
 }
 
 const UserNav: React.FC<IUserNavProps> = ({ width, className }) => {
-  const [popup, setPopup] = useState(false);
+  const [modal, setModal] = useState(false);
   const [alert, setAlert] = useState(false);
   const users = useStore($users);
+  const cart = useStore($cart);
 
   return (
     <List className={className} width={width}>
@@ -24,7 +26,7 @@ const UserNav: React.FC<IUserNavProps> = ({ width, className }) => {
             </Login>
             <Logout onClick={() => {
               logOut();
-              setPopup(false);
+              setModal(false);
             }}>
               Выйти
             </Logout>
@@ -33,13 +35,13 @@ const UserNav: React.FC<IUserNavProps> = ({ width, className }) => {
           <>
             <Login onClick={() => {
               setAlert(false);
-              setPopup(true);
+              setModal(true);
             }}>
               Войти
             </Login>
             <LoginForm
-              isOpen={popup}
-              setOpen={setPopup}
+              isOpen={modal}
+              setOpen={setModal}
               alert={alert}
               setAlert={setAlert}
             />
@@ -47,9 +49,11 @@ const UserNav: React.FC<IUserNavProps> = ({ width, className }) => {
         )}
       </li>
       <li key='2'>
-        <Cart>
+        <CartTitle>
+          {cart.length ? <ProductsNumber>{cart.length}</ProductsNumber> : null}
           Корзина
-        </Cart>
+        </CartTitle>
+        <StyledCart />
       </li>
     </List>
   )

@@ -1,27 +1,37 @@
-export interface ISlide {
-  id: number;
-  title: string;
-  text: string;
-  image: string;
-}
+import  { IDevice } from './devices';
 
-export const slides: ISlide[] = [
+export const slides: IDevice[] = [
   {
     id: 1,
-    title: 'Порхает как бабочка, жалит как пчела!',
-    text: 'Этот обычный, на первый взгляд, квадрокоптер оснащён мощным лазером, замаскированным под стандартную камеру.',
     image: 'images/slider/quadcopter.png',
+    title: 'Квадрокоптер с лазером',
+    moto: 'Порхает как бабочка, жалит как пчела!',
+    description: 'Этот обычный, на первый взгляд, квадрокоптер оснащён мощным лазером, замаскированным под стандартную камеру.',
+    price: 5000,
+    isNew: true,
+    bluetooth: true,
+    colors: ['black', 'white']
   },
   {
     id: 2,
-    title: 'Худеем правильно!',
-    text: 'Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.',
     image: 'images/slider/bracelet.png',
+    title: 'Фитнес-браслет',
+    moto: 'Худеем правильно!',
+    description: 'Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.',
+    price: 4000,
+    isNew: true,
+    bluetooth: false,
+    colors: ['black']
   },
   {
     id: 3,
-    title: 'Делай селфи, как Бен Стиллер!',
-    text: 'Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 кг.',
     image: 'images/slider/monopod.png',
+    title: 'Восьмиметровая селфи-палка',
+    moto: 'Делай селфи, как Бен Стиллер!',
+    description: 'Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 кг.',
+    price: 4500,
+    isNew: false,
+    bluetooth: false,
+    colors: ['black']
   },
 ];

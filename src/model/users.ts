@@ -61,7 +61,3 @@ export const $users = createStore({
       loginError: true
     }
   });
-
-$users.watch(state => {
-  console.log(state)
-});

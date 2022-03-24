@@ -1,6 +1,7 @@
 import React, { useState }  from 'react';
 import { useStore } from 'effector-react';
 import { $slides } from '../../../model/slides';
+import { buyProduct } from '../../../model/cart';
 import { Title } from '../../ui';
 import {
   StyledSlider,
@@ -12,12 +13,13 @@ import {
   RightArrow,
   TextContent,
   BulletList,
-  Bullet
+  Bullet,
+  StyledButton
 } from './styles';
 
 export interface IBulletProps {
   isCurrent: boolean;
-};
+}
 
 const Slider: React.FC = () => {
   const slides = useStore($slides);
@@ -51,8 +53,16 @@ const Slider: React.FC = () => {
             </RightArrow>
           </Wrapper>
           <TextContent>
-            <Title as='h3' size='L' marginTop={130} marginBottom={30}>{slide.title}</Title>
-            <p>{slide.text}</p>
+            <Title as='h3' size='L' marginTop={130} marginBottom={30}>{slide.moto}</Title>
+            <p>{slide.description}</p>
+            <StyledButton
+              highlighted
+              light
+              type='button'
+              onClick={() => buyProduct(slide)}
+            >
+              Купить
+            </StyledButton>
             <BulletList>
               {slides.map((_, index) => (
                 <li key={index}>

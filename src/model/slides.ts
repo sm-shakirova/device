@@ -1,4 +1,5 @@
 import { createStore } from 'effector';
-import { slides, ISlide } from '../data/slides';
+import { slides } from '../data/slides';
+import { IDevice } from '../data/devices';
 
-export const $slides = createStore<ISlide[]>(slides);
+export const $slides = createStore<IDevice[]>(slides);

@@ -2,6 +2,8 @@ export interface IDevice {
   id: number;
   image: string;
   title: string;
+  moto?: string;
+  description?: string;
   price: number;
   isNew: boolean;
   bluetooth: boolean;
