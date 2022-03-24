@@ -13,7 +13,6 @@ export const List = styled.ul`
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
   font-family: ${(props) => props.theme.fontAdditional};
   font-size: ${(props) => props.theme.fontSize.S};
   line-height: ${(props) => props.theme.lineHeight.S};
@@ -26,22 +25,14 @@ export const StyledLink = styled(Link)`
   text-transform: uppercase;
   color: inherit;
   display: block;
-  padding: 10px;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  border-radius: 20px;
   cursor: pointer;
 `;
 
 export const ListItem = styled.li<INavProps>`
-  &:nth-child(3n - 2) {
-    ${StyledLink} {
-      padding-left: 0;
-    }
-  }
-
   &:nth-child(3n + 3) {
     margin-left: ${(props) => props.asymmetric ? 'auto' : '0'};
-      
-    ${StyledLink} {
-      padding-right: 0;
-    }
   }
 `;

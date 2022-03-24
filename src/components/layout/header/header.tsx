@@ -4,8 +4,9 @@ import {
   StyledHeader,
   Wrapper,
   StyledLogo,
-  StyledNav,
   StyledSearch,
+  StyledNav,
+  StyledUserNav,
   CatalogMenu
 } from './styles';
 
@@ -16,7 +17,8 @@ const Header: React.FC = () => {
         <h1 className='visually-hidden'>Интернет-магазин "Девайс"</h1>
         <StyledLogo />
         <StyledSearch width='500px' placeholder='Поиск по сайту'/>
-        <StyledNav width='100%' asymmetric />
+        <StyledNav width='calc(100% + 40px)' asymmetric />
+        <StyledUserNav width='calc(100% + 40px)' />
         <CatalogMenu>
           <Link to='/catalog'>Каталог товаров</Link>
         </CatalogMenu>

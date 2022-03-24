@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useStore } from 'effector-react';
 import { $tabs, changeTab } from '../../../model/tabs';
 import { StyledNav, List, ListItem, StyledLink } from './styles';
@@ -10,9 +10,12 @@ export interface INavProps {
   className?: string;
 }
 
-const Nav: React.FC<INavProps> = ({ light, asymmetric, width, className }) => {
+const Nav: React.FC<INavProps> =
+  ({ light,
+     asymmetric,
+     width,
+     className}) => {
   const tabs = useStore($tabs);
-
   return (
     <StyledNav
       light={light}
