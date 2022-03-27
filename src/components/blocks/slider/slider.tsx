@@ -2,7 +2,7 @@ import React, { useState }  from 'react';
 import { useStore } from 'effector-react';
 import { $slides } from '../../../model/slides';
 import { buyProduct } from '../../../model/cart';
-import { Title } from '../../ui';
+import { Title, Table } from '../../ui';
 import {
   StyledSlider,
   Slides,
@@ -74,6 +74,9 @@ const Slider: React.FC = () => {
                 </li>
               ))}
             </BulletList>
+            {slide.qualities ? (
+              <Table rows={slide.qualities} />
+            ) : null}
           </TextContent>
         </Slide>
       </Slides>

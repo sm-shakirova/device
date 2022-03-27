@@ -97,7 +97,15 @@ export const Bullet = styled.button<IBulletProps>`
   border: 2px solid ${(props) => props.theme.colors.basicBlack};
   border-radius: 50%;
   padding: 0;
-  cursor: pointer;
+  cursor: ${(props) => props.isCurrent ? 'unset' : 'pointer'};
+  
+  &:hover {
+    opacity: ${(props) => props.isCurrent ? '1' : '0.6'};
+  }
+
+  &:active {
+    opacity: ${(props) => props.isCurrent ? '1' : '0.3'};;
+  }
 `;
 
 export const StyledButton = styled(Button)`

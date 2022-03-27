@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { CatalogNav } from '../../ui';
 import {
   StyledHeader,
   Wrapper,
@@ -7,10 +7,13 @@ import {
   StyledSearch,
   StyledNav,
   StyledUserNav,
-  CatalogMenu
+  CatalogNavHeader,
+  Plus
 } from './styles';
 
 const Header: React.FC = () => {
+  const [menu, setMenu] = useState(false);
+
   return (
     <StyledHeader>
       <Wrapper>
@@ -19,9 +22,11 @@ const Header: React.FC = () => {
         <StyledSearch width='500px' placeholder='Поиск по сайту'/>
         <StyledNav width='calc(100% + 40px)' asymmetric />
         <StyledUserNav width='calc(100% + 40px)' />
-        <CatalogMenu>
-          <Link to='/catalog'>Каталог товаров</Link>
-        </CatalogMenu>
+        <CatalogNavHeader onClick={() => setMenu(!menu)}>
+          Каталог товаров
+          <Plus open={menu} />
+        </CatalogNavHeader>
+        <CatalogNav display={menu} setDisplay={setMenu} />
       </Wrapper>
     </StyledHeader>
   );

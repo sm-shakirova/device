@@ -29,10 +29,41 @@ export const StyledLink = styled(Link)`
   border: 2px solid transparent;
   border-radius: 20px;
   cursor: pointer;
+  position: relative;
+  
+  &:after {
+    content: '';
+    height: 2px;
+    position: absolute;
+    left: 20px;
+    right: 24px;
+    bottom: 4px;
+    display: none;
+  }
+  
+  &:hover:after {
+    display: block;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 `;
 
 export const ListItem = styled.li<INavProps>`
   &:nth-child(3n + 3) {
     margin-left: ${(props) => props.asymmetric ? 'auto' : '0'};
+  }
+  
+  ${StyledLink}:after {
+    background-color: ${(props) => props.light ? props.theme.colors.basicWhite : props.theme.colors.basicBlack};
+  }
+
+  ${StyledLink}:hover {
+    color: ${(props) => props.light ? props.theme.colors.themeDark : props.theme.colors.basicBlack};
+    
+    :after {
+      background-color: ${(props) => props.light ? props.theme.colors.themeDark : props.theme.colors.basicBlack};
+    }
   }
 `;

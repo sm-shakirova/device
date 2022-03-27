@@ -8,6 +8,8 @@ import Range from './range/range';
 import Input from './input/input';
 import Button from './button/button';
 import Alert from './alert/alert';
+import Table from './table/table';
+import CatalogNav from './catalog-nav/catalog-nav';
 
 export {
   Logo,
@@ -19,5 +21,7 @@ export {
   Range,
   Input,
   Button,
-  Alert
+  Alert,
+  Table,
+  CatalogNav
 };

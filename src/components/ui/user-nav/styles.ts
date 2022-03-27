@@ -100,11 +100,12 @@ export const CartTitle = styled(Button)`
 export const ProductsNumber = styled.span`
   border-radius: 50%;
   background-color: ${(props) => props.theme.colors.basicWhite};
-  width: 21px;
+  min-width: 21px;
   height: 21px;
   position: absolute;
   left: 5px;
   text-align: center;
   font-size: 14px;
   line-height: 19px;
+  padding: 0 3px;
 `;

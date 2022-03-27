@@ -23,7 +23,7 @@ const Nav: React.FC<INavProps> =
       className={className}>
       <List>
         {tabs.map((tab) => (
-          <ListItem key={tab.id} asymmetric={asymmetric}>
+          <ListItem key={tab.id} asymmetric={asymmetric} light={light}>
             <StyledLink smooth to='/#tabs' onClick={() => changeTab(tab.id)}>
               {tab.title}
             </StyledLink>

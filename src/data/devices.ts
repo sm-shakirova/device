@@ -2,17 +2,23 @@ export interface IDevice {
   id: number;
   image: string;
   title: string;
+  price: number;
+  category: string;
   moto?: string;
   description?: string;
-  price: number;
-  isNew: boolean;
-  bluetooth: boolean;
-  colors: string[];
+  isNew?: boolean;
+  bluetooth?: boolean;
+  colors?: string[];
+  qualities?: {
+    quality: string;
+    value: string;
+  }[]
 }
 
 export const devices: IDevice[] = [
   {
-    id: 1,
+    id: 4,
+    category: 'monopod',
     image: 'images/catalog/device-1.jpg',
     title: 'Любительская селфи-палка',
     price: 500,
@@ -24,7 +30,8 @@ export const devices: IDevice[] = [
     ]
   },
   {
-    id: 2,
+    id: 5,
+    category: 'monopod',
     image: 'images/catalog/device-2.jpg',
     title: 'Профессиональная селфи-палка ',
     price: 1500,
@@ -36,7 +43,8 @@ export const devices: IDevice[] = [
     ]
   },
   {
-    id: 3,
+    id: 6,
+    category: 'monopod',
     image: 'images/catalog/device-3.jpg',
     title: 'Непотопляемая селфи-палка',
     price: 2500,
@@ -47,7 +55,8 @@ export const devices: IDevice[] = [
     ]
   },
   {
-    id: 4,
+    id: 7,
+    category: 'monopod',
     image: 'images/catalog/device-4.jpg',
     title: 'Селфи-палка «Следуй за мной»',
     price: 4900,
