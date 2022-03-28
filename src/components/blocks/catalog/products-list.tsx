@@ -1,11 +1,11 @@
 import React from 'react';
 import { useStore } from 'effector-react';
-import { $catalog } from '../../../model/catalog';
+import { $products } from '../../../model/products';
 import { ProductCard } from '../../ui';
 import { Products, ListItem } from './styles';
 
 const ProductsList: React.FC = () => {
-  const products = useStore($catalog);
+  const products = useStore($products);
 
   return (
     <div>

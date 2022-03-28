@@ -4,7 +4,7 @@ export interface IDefaultFilters {
     max: number;
   };
   colors: string[];
-  bluetooth: boolean;
+  bluetooth: string;
 }
 
 export interface IFilter {
@@ -26,7 +26,7 @@ export const defaultFilters: IDefaultFilters = {
     max: 5000,
   },
   colors: ['black', 'white'],
-  bluetooth: true,
+  bluetooth: 'yes',
 };
 
 export const filters: IFilter[] = [
