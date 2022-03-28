@@ -74,7 +74,7 @@ const Slider: React.FC = () => {
                 </li>
               ))}
             </BulletList>
-            {slide.qualities ? (
+            {slide.qualities?.length ? (
               <Table rows={slide.qualities} />
             ) : null}
           </TextContent>

@@ -1,17 +1,27 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useStore } from 'effector-react';
-import { $products, $filters, filterByCategory, filterProducts, resetProducts } from '../../../model/products';
+import {
+  $products,
+  $filters,
+  filterByCategory,
+  filterProducts,
+  resetProducts,
+  sortProducts,
+  $sorting
+} from '../../../model/products';
 import { ProductCard } from '../../ui';
 import { Products, ListItem, Text } from './styles';
 
 const ProductsList: React.FC = () => {
   const products = useStore($products);
+  const sorting = useStore($sorting);
   const filters = useStore($filters);
   const { category } = useParams();
 
   useEffect(() => {
     resetProducts();
+    sortProducts(sorting);
     filterProducts(filters);
     if (category) filterByCategory(category);
   });

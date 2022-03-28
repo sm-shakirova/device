@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyledNav, List, StyledLink } from './styles';
-import { $categories, resetProducts } from '../../../model/products';
+import { $categories } from '../../../model/products';
 import { useStore } from 'effector-react';
 
 export interface ICatalogNav {

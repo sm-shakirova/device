@@ -5,17 +5,18 @@ import { categories } from '../data/categories';
 
 export const $categories = createStore(categories);
 
+export const changeSorting = createEvent<string>();
+export const $sorting = createStore('by-lower-price')
+  .on(changeSorting, (_, payload) => payload);
+
 export const changeFilters = createEvent<IDefaultFilters>();
 export const $filters = createStore(defaultFilters)
   .on(changeFilters, (_, payload) => payload);
 
 export const filterByCategory = createEvent<string>();
 export const filterProducts = createEvent<IDefaultFilters>();
-export const sortByLowerPrice = createEvent();
-export const sortByHigherPrice = createEvent();
-export const sortByNovelty = createEvent();
+export const sortProducts = createEvent<string>();
 export const resetProducts = createEvent();
-
 export const $products = createStore<IDevice[]>(devices)
   .on(filterByCategory, (products, category) =>
     products.filter((product) => product.category === category)
@@ -40,10 +41,14 @@ export const $products = createStore<IDevice[]>(devices)
       return colorCheck;
     })
   })
-  .on(sortByLowerPrice, (products) =>
-    [...products].sort((a, b) => a.price - b.price))
-  .on(sortByHigherPrice, (products) =>
-    [...products].sort((a, b) => b.price - a.price))
-  .on(sortByNovelty, (products) =>
-    [...products].sort((a, b) => a.isNew ? 0 : b.isNew ? 1 : -1))
+  .on(sortProducts, (products, value) => {
+    switch (value) {
+      case 'by-lower-price':
+        return [...products].sort((a, b) => a.price - b.price);
+      case 'by-higher-price':
+        return [...products].sort((a, b) => b.price - a.price);
+      case 'by-novelty':
+        return [...products].sort((a, b) => a.isNew ? 0 : b.isNew ? 1 : -1);
+    }
+  })
   .reset(resetProducts);

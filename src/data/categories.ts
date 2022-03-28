@@ -1,31 +1,38 @@
 export interface ICategory {
-  name: string,
+  name: string;
   display: string;
+  icon: string;
 }
 
 export const categories: ICategory[] = [
   {
     name: 'vr',
-    display: 'Виртуальная реальность'
+    display: 'Виртуальная реальность',
+    icon: '/images/menu/menu-vr.svg'
   },
   {
     name: 'monopod',
-    display: 'Моноподы для cелфи'
+    display: 'Моноподы для cелфи',
+    icon: '/images/menu/menu-monopod.svg'
   },
   {
     name: 'camera',
-    display: 'Экшн-камеры'
+    display: 'Экшн-камеры',
+    icon: '/images/menu/menu-camera.svg'
   },
   {
     name: 'bracelet',
-    display: 'Фитнес-браслеты'
+    display: 'Фитнес-браслеты',
+    icon: '/images/menu/menu-bracelet.svg'
   },
   {
     name: 'watch',
-    display: 'Умные часы'
+    display: 'Умные часы',
+    icon: '/images/menu/menu-watch.svg'
   },
   {
     name: 'quadcopter',
-    display: 'Квадрокоптеры'
+    display: 'Квадрокоптеры',
+    icon: '/images/menu/menu-quadcopter.svg'
   }
 ];
