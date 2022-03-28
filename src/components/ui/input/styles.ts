@@ -22,8 +22,8 @@ export const Label = styled.label`
 `;
 
 export const StyledInput = styled.input`
-  border: 3px solid ${(props) => props.theme.colors.basicLightGray};
-  background-color: ${(props) => props.theme.colors.basicLightGray};
+  border: 3px solid ${(props) => props.theme.colors.basicLightGrey};
+  background-color: ${(props) => props.theme.colors.basicLightGrey};
   padding: 20px;
   font-size: ${(props) => props.theme.fontSize.XS};
 `;

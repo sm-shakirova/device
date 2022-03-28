@@ -1,5 +1,5 @@
 import React from 'react';
-import { Slider, Tabs } from '../../blocks';
+import { Slider, Tabs, Menu } from '../../blocks';
 import { Wrapper } from './styles';
 
 const MainPage: React.FC = () => {
@@ -7,6 +7,7 @@ const MainPage: React.FC = () => {
     <main>
       <Wrapper>
         <Slider />
+        <Menu />
         <Tabs />
       </Wrapper>
     </main>

@@ -13,7 +13,7 @@ export const StyledNav = styled.div<INav>`
   right: 0;
   top: 90%;
   padding: 30px 60px 55px;
-  z-index: 10;
+  z-index: 5;
 `;
 
 export const List = styled.ul`

@@ -56,7 +56,7 @@ export const Login = styled(Button)`
     bottom: 0;
     left: 20px;
     margin: auto;
-    background-image: url('images/person.svg');
+    background-image: url('/images/person.svg');
     background-repeat: no-repeat;
   }
 `;
@@ -88,7 +88,7 @@ export const CartTitle = styled(Button)`
     bottom: 0;
     left: 20px;
     margin: auto;
-    background-image: url('images/cart.svg');
+    background-image: url('/images/cart.svg');
     background-repeat: no-repeat;
   }
   

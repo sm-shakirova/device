@@ -26,8 +26,8 @@ export const deviceTheme: DefaultTheme = {
   colors: {
     basicWhite: '#ffffff',
     basicLight: '#f0f0f0',
-    basicLightGray: '#ebebeb',
-    basicGray: '#dcdcdc',
+    basicLightGrey: '#ebebeb',
+    basicGrey: '#dcdcdc',
     basicDark: '#444444',
     basicBlack: '#000000',
     themeMain: '#ffe17f',

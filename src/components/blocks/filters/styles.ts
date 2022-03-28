@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const StyledFilters = styled.section`
   background: linear-gradient(to bottom, 
-      ${(props) => props.theme.colors.basicGray} 70px, 
-      ${(props) => props.theme.colors.basicLightGray} 0
+      ${(props) => props.theme.colors.basicGrey} 70px, 
+      ${(props) => props.theme.colors.basicLightGrey} 0
   );
   height: 100%;
 `;

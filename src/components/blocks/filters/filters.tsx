@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useStore } from 'effector-react';
-import { $filters, filterProducts, changeFilters, resetProducts } from '../../../model/products';
+import { $filters, changeFilters } from '../../../model/products';
 import { filters } from '../../../data/filters';
 import { Title, Range } from '../../ui';
 import {
@@ -17,19 +17,20 @@ import {
 
 const Filters: React.FC = () => {
   const currentFilters = useStore($filters);
+  const [formData, setFormData] = useState(currentFilters);
 
   const handleFilterChange = (filterName: string, optionValue: string) => {
     switch (filterName) {
       case 'color':
-        return currentFilters.colors.includes(optionValue) ?
-          changeFilters({
-            ...currentFilters, colors: currentFilters.colors.filter(color => color !== optionValue)
-          }) : changeFilters({
-            ...currentFilters, colors: [...currentFilters.colors, optionValue]
+        return formData.colors.includes(optionValue) ?
+          setFormData({
+            ...formData, colors: formData.colors.filter(color => color !== optionValue)
+          }) : setFormData({
+            ...formData, colors: [...formData.colors, optionValue]
           })
       case 'bluetooth':
-        return changeFilters({
-          ...currentFilters, bluetooth: optionValue
+        return setFormData({
+          ...formData, bluetooth: optionValue
         })
     }}
 
@@ -41,8 +42,7 @@ const Filters: React.FC = () => {
         </Header>
         <Form onSubmit={(evt) => {
           evt.preventDefault();
-          resetProducts();
-          filterProducts(currentFilters);
+          changeFilters(formData);
         }}>
           {filters.map((filter) => (
             <Fieldset>
@@ -62,8 +62,8 @@ const Filters: React.FC = () => {
                         type={filter.type}
                         name={filter.name}
                         value={option.value}
-                        checked={filter.name === 'color' ? currentFilters.colors.includes(option.value) :
-                          filter.name === 'bluetooth' ? (currentFilters.bluetooth === option.value) : false}
+                        checked={filter.name === 'color' ? formData.colors.includes(option.value) :
+                          filter.name === 'bluetooth' ? (formData.bluetooth === option.value) : false}
                         onChange={() => handleFilterChange(filter.name, option.value)}
                       />
                       <Label>{option.display}</Label>

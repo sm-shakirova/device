@@ -13,7 +13,7 @@ export const RangeScale = styled.div<IRangeScale>`
   position: relative;
   width: ${(props) => props.width ? `${props.width}px` : '100%'};
   height: 2px;
-  background-color: ${(props) => props.theme.colors.basicGray};
+  background-color: ${(props) => props.theme.colors.basicGrey};
   margin-top: 40px;
   margin-bottom: 20px;
 `;

@@ -4,10 +4,7 @@ import PageLayout from '../components/layout';
 import { MainPage, CatalogPage } from '../components/pages';
 import { GlobalStyle } from './styles';
 
-export interface IAppProps {
-}
-
-const App: React.FC<IAppProps> = () => {
+const App: React.FC = () => {
   return (
     <>
       <GlobalStyle />
@@ -18,7 +15,7 @@ const App: React.FC<IAppProps> = () => {
               <MainPage />
             </PageLayout>
           } />
-          <Route path='/catalog' element={
+          <Route path='/catalog/:category' element={
             <PageLayout>
               <CatalogPage />
             </PageLayout>

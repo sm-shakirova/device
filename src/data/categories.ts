@@ -1,6 +1,11 @@
-export const categories = [
+export interface ICategory {
+  name: string,
+  display: string;
+}
+
+export const categories: ICategory[] = [
   {
-    name: 'VR',
+    name: 'vr',
     display: 'Виртуальная реальность'
   },
   {

@@ -1,11 +1,15 @@
 import { createStore, createEvent } from 'effector';
 import { devices, IDevice } from '../data/devices';
 import { filters, defaultFilters, IDefaultFilters } from '../data/filters';
+import { categories } from '../data/categories';
+
+export const $categories = createStore(categories);
 
 export const changeFilters = createEvent<IDefaultFilters>();
 export const $filters = createStore(defaultFilters)
   .on(changeFilters, (_, payload) => payload);
 
+export const filterByCategory = createEvent<string>();
 export const filterProducts = createEvent<IDefaultFilters>();
 export const sortByLowerPrice = createEvent();
 export const sortByHigherPrice = createEvent();
@@ -13,6 +17,9 @@ export const sortByNovelty = createEvent();
 export const resetProducts = createEvent();
 
 export const $products = createStore<IDevice[]>(devices)
+  .on(filterByCategory, (products, category) =>
+    products.filter((product) => product.category === category)
+  )
   .on(filterProducts, (products, currentFilters) => {
     return products.filter((product) => {
       // if (product.price < currentFilters.price.min) return false;
@@ -40,11 +47,3 @@ export const $products = createStore<IDevice[]>(devices)
   .on(sortByNovelty, (products) =>
     [...products].sort((a, b) => a.isNew ? 0 : b.isNew ? 1 : -1))
   .reset(resetProducts);
-
-$filters.watch((state) => {
-  console.log(state)
-})
-
-$products.watch((state) => {
-  console.log(state)
-})

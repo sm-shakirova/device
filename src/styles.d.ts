@@ -27,8 +27,8 @@ declare module 'styled-components' {
     colors: {
       basicWhite: string,
       basicLight: string,
-      basicLightGray: string,
-      basicGray: string,
+      basicLightGrey: string,
+      basicGrey: string,
       basicDark: string,
       basicBlack: string,
       themeMain: string,
